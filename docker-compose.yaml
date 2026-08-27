@@ -37,6 +37,12 @@ services:
     extends:
       file: .config/docker-compose-base.yaml
       service: grafana
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/grafana-postgresql-datasource
+      - ./provisioning:/etc/grafana/provisioning
+      - .:/root/grafana-postgresql-datasource
+      # Hide the bundled core plugin so Grafana loads the external (local dev) build instead
+      - /dev/null:/usr/share/grafana/public/app/plugins/datasource/grafana-postgresql-datasource/dist/plugin.json
     depends_on:
       fixture-loader:
         condition: service_completed_successfully

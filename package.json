@@ -79,7 +79,7 @@
     "@grafana/plugin-ui": "0.17.3",
     "@grafana/runtime": "13.1.1",
     "@grafana/schema": "13.1.1",
-    "@grafana/sql": "13.1.1",
+    "@grafana/sql": "file:/tmp/grafana-sql-fixed.tgz",
     "@grafana/ui": "13.1.1",
     "@openfeature/web-sdk": "1.9.0",
     "lodash": "4.18.1",
